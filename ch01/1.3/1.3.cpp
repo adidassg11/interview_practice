@@ -1,0 +1,13 @@
+// chapter 1 question 3
+// given two strings, write a method to decide if one is a permutation of the other
+
+
+#include <string>
+
+using namespace std;
+
+void main()
+{
+
+  return;
+}

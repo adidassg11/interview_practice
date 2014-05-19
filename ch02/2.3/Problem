@@ -1,0 +1,7 @@
+/*
+Impl an algo to delete a node in the middle of a singly linked list given only access to that node
+
+EXAMPLE  
+input: the node c from the linked list a>b>c>d>e
+result: nothing is returned, but the new linked list looks like a>b>d>e
+*/
