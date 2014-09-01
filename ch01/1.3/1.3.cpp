@@ -4,10 +4,36 @@
 
 #include <string>
 
+#define NUMCHAR 256
+
 using namespace std;
 
-void main()
-{
+bool isPerm(char* s1, char* s2) {
+    printf("s1: %s\ns2: %s\n", s1, s2);
+    
+    bool isPerm = false;
+    char* charArr = new char[NUMCHAR];
 
-  return;
+    printf("charArr: %s\n", charArr);
+    memset(charArr, 0, NUMCHAR*sizeof(char));
+    printf("charArr: %s\n", charArr);
+    
+    
+
+    printf("Is perm? %s\n", isPerm ? "TRUE" : "FALSE"); 
+
+    delete [] charArr;
+    return isPerm; 
+}
+
+int main()
+{
+    char s1[] = "anna";
+    char s2[] = "naan";
+
+    isPerm(s1, s2);
+
+//    isPerm("asdf", "aasdf");
+
+    return 0;
 }
