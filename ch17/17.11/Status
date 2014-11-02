@@ -1,0 +1,8 @@
+COMPLETE (sort of)
+
+progress - 
+- my rand generator is obviously lopsided, getting it right will help with other problems
+    - this was just a really stupid bug
+- now i'm realizing you can't just use addition with rand5's  and get rand10
+- SOLUTION: generate random digits (using rand5) for a large number then simply do mod7
+    - caveat - rand7 given rand5 works, but other combinations don't
