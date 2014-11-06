@@ -23,10 +23,11 @@ bool isLetter(char& s_c)
 
 string compress(string s)
 {
+    printf("compress(%s)\n", s.c_str());
   string strComp = "";
   size_t sLen = s.length();
   char curLetter = s[0];
-  unsigned int repeatCtr = 1;
+  unsigned int repeatCtr = 0;
 
   for (size_t i = 0; i<sLen; i++) {
     if (!isLetter(s[i])) {
@@ -35,11 +36,8 @@ string compress(string s)
     }
     else {
       if ( s[i] != curLetter ) { //found new letter, write out
-        char buf [50];
-        size_t numChars = sprintf(buf, "%d", repeatCtr, 10);
-        
-        strComp.append(&curLetter);
-        strComp.append(string(buf), numChars);
+        strComp.append(1,curLetter);
+        strComp += std::to_string(repeatCtr);  //c++ 11!!
         curLetter = s[i];
         repeatCtr = 1;
         continue;
@@ -48,7 +46,10 @@ string compress(string s)
       repeatCtr++;
     }
   }
+    strComp.append(1,curLetter);
+    strComp += std::to_string(repeatCtr);  //c++ 11!!
 
+    printf("\t%s\n", strComp.c_str());
   return strComp;
 }
 
@@ -56,33 +57,14 @@ int main()
 {
   string str;
 
-  //TODO: test isLetter
-/*
-  char x;
-  x = '7';
-  cout << "isLetter(): " << isLetter(x) << endl;
-  x = 'a';
-  cout << "isLetter(): " << isLetter(x) << endl;
-  x = 'Z';
-  cout << "isLetter(): " << isLetter(x) << endl;
-  x = '%';
-  cout << "isLetter(): " << isLetter(x) << endl;
-
-  return 0;
-*/
-  
-
   str = "aabbccc";
-  cout << "string: " << str << endl;
-  cout << "string compressed: " << compress(str) << endl;
+    compress(str);
 
   str = "aabcccccaaa";
-  cout << "string: " << str << endl;
-  cout << "string compressed: " << compress(str) << endl;
+    compress(str);
 
   str = "aab%ccccaaa";
-  cout << "string: " << str << endl;
-  cout << "string compressed: " << compress(str) << endl;
+    compress(str);
 
   return 0;
 }
