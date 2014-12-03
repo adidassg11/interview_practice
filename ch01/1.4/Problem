@@ -1,0 +1,7 @@
+// chapter 1 question 1
+/*
+ write a method to replace all spaces in a string with '%20'. you may assume that the string has sufficient space at the end of the string to hold the addditional chas, and that you are given the 'true' length of the string. (note: if using java, use a char aarray)
+EXAMPLE
+input: "Mr John Smith    "
+output: "Mr%20John%20..."
+*/

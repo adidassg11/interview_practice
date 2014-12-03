@@ -1,0 +1,14 @@
+Since XML is very verbose, you are given a way of encoding it where each tag gets mapped to a pre-defined integer value. The language/grammar is as follows:
+    Element --> Tag attributes END children END
+    Attribute --> Tag value
+    END --> 0
+    Tag --> some predefined mapping to int
+    Value --> string value END
+For example, the following XML might be converted into the compressed string below (assuming a mapping of family -> 1, person ->2, firstname ->3, lastname ->4, state -> 5).
+    <family lastName="McDowell" state="CA">
+        <person firstName="Gayle">Some message</person>
+    </family>
+Becomes:
+    1 4 McDowell 5 CA 0 2 3 Gayle 0 Some message 0 0.
+
+Write code to print the encoded version of an XML element (passed in Element and Attribute objects)

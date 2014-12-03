@@ -1,0 +1,8 @@
+Complete
+
+Solution:
+O(1) time and space
+
+Notes:
+- everytime you multiply by another factor of 10 (20, 30, 40, not 52, 87, etc.), you add another zero
+- factorials are always even, so every time you multiply by a number that ends in 5, you tack on another 0
