@@ -1,0 +1,3 @@
+Complete
+
+Can't figure out the case where you delete the last node. How do you make the last node become NULL? You actually need to modify the previous node, therefore this might be a case where you walk thru the whole chain in O(n) time to delete :( Given that we only have access to one node, this might actually not be possible. Maybe we could modify the data structure to include some info about this.
