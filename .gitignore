@@ -23,3 +23,7 @@
 *.exe
 *.out
 *.app
+
+
+# my own
+.DS_Store
