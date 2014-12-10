@@ -27,3 +27,5 @@
 
 # my own
 .DS_Store
+.swp #technically should be '.sw? or actually .s??', but that's a bad idea
+.swo
