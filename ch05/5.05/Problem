@@ -1,0 +1,3 @@
+5.05 Compute x*y without multiply or add
+
+Write a function that multiplies two unsigned positive integers. The only operators you are allowed to use are assignment and the bitwise operators i.e. >>, << | & ! and ^. You cannot use increment or decrement. YOu may use loops, conditionals, and functions that you write yourself.
