@@ -5,6 +5,15 @@
 
 using namespace std;
 
+inline void printXSpaces(int x)
+{
+/*
+    for (int i = 0; i<x; i++) {
+        printf(".");
+    }
+    */
+}
+
 void printBTNode(BTNode* node)
 {
     printf("BTNode data:%d\tmem:%p\tL:%p\tR:%p\n", node->data, node, node->lchild, node->rchild);
@@ -69,11 +78,46 @@ void printTreePretty(BTNode* root)
         exit(EXIT_FAILURE);
     }
 
-    int levels = 1;
+    //these are important for spacing
+    int levels = getNumLevels(root);
+    int curLevel = 1;
 
-    parseTreeThruQ(root, levels);
+    queue<BTNode*> q;
+    q.push(root);
+    q.push(new BTNode(LEVEL_SEPARATOR));
+    
+    printXSpaces((1<<(levels-curLevel))-1);
+    
+    while (!q.empty()) {
+        BTNode* n = q.front();
+        q.pop();
+        if (n) {
+            if (n->data != LEVEL_SEPARATOR) {
+                q.push(n->lchild);
+                q.push(n->rchild);
+                printf("%d", n->data);
+                printXSpaces((1<<(levels-curLevel))-1);
+            }
+            else {
+                if(!q.empty()) {
+                    q.push(new BTNode(LEVEL_SEPARATOR));
+                }
+                printXSpaces((1<<(levels-curLevel))-1);
+                printf("\n");
+                curLevel++;
+                if (curLevel < levels) {
+                    printXSpaces((1<<(levels-curLevel))-1);
+                }
+                delete n;
+            }
+        }
+        else {
+            printf("x");
+        } 
+    }
 }
 
+//might be junk
 void parseTreeThruQ(BTNode* root, int &levels)
 {
     queue<BTNode*> q;
@@ -116,11 +160,47 @@ void deleteTree(BTNode* root)
         BTNode* n = q.front();
         q.pop();
 
-        if (n->lchild) q.push(n->lchild); 
-        if (n->rchild) q.push(n->rchild); 
+        if (n) {
+            if (n->lchild) q.push(n->lchild); 
+            if (n->rchild) q.push(n->rchild); 
+            printf(" %d", n->data);
+            delete n;
+        }
 
-        printf(" %d", n->data);
     }
 
     printf("\n");
+}
+
+int getNumLevels(BTNode* root) 
+{
+    int levels = 0;
+    queue<BTNode*> q;
+    q.push(root);
+    q.push(new BTNode(LEVEL_SEPARATOR));
+
+    while (!q.empty()) {
+        BTNode* n = q.front();
+        q.pop();
+        if (n) {
+            if (n->data == LEVEL_SEPARATOR) {
+                levels++;
+                if (q.empty()) {
+                    //all done, wrap up
+                    delete n;
+                }
+                else {
+                    q.push(n);
+                    
+                }
+            }
+            else {
+                q.push(n->lchild);
+                q.push(n->rchild);
+            }
+        } 
+    }
+
+    printf("getNumLevels(): %d\n", levels);
+    return levels;
 }
