@@ -1,5 +1,7 @@
-#include <stdio.h>
 #include <climits>
+
+#define INVALID_DATA INT_MAX
+#define LEVEL_SEPARATOR (INT_MAX -1)
 
 struct BTNode
 {
@@ -14,4 +16,8 @@ struct BTNode
 };
 
 void printBTNode(BTNode* node);
+void printTree(BTNode* root);
 void printTreePretty(BTNode* root);
+void deleteTree(BTNode* root);
+void parseTreeThruQ(BTNode* root, int &levels);
+
