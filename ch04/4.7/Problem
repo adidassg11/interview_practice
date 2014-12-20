@@ -1,0 +1,7 @@
+4.7
+
+A colleage faced the following problem in a program to draw lines on a bitmapped display. An array of n pairs of reals (asub(s), bsub(i)) defined the n lines y(subi) = a(sub i)x + b(sub i). The lines were ordered in the x-interval [0,1] in the sense that y(sub i) < y(sub i+1) for all the values ofi between 0 and n-2 and all values of x in [0,]1:
+
+<TODO: insert image>
+
+Less formally, the lines don't touch in the vertical slab. Given a point (x,y), where 0<=x<=1, he wanted to determine the two lines that bracket the point. How could he solve the problem quickly?

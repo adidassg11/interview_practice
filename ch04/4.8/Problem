@@ -1,0 +1,3 @@
+4.8
+
+Binary search is fundamentally faster than sequential search: to search an n-element table, it makes roughly log2n comparisons while sequential search makes roughly n/2. While it is often fast enough, in a few cases binary search must be made faster yet. Although you can't reduce the log number of comparisons made by the algo, can you an rewrite the binary search code to be faster? For definiteness, assume that you are to search a sorted table of n=1000 integers.

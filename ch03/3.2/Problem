@@ -1,0 +1,7 @@
+3.2
+
+A kth-order linear recurrence with constant coefficients defines a series as 
+
+a(sub n) = c(sub1)a(sub n-1) + c(sub2)a(sub n-2) + ... c(subk)a(sub n-k) + c(subk+1) 
+
+where c(sub1), ..., c(sub k+1) are real numbers. Write a program that with input k, a(sub1),... a(sub k), c(sub 1, ..., c(sub k+1), and m produces the output a(sub1) thru a(sub m) how difficult is that program compared to a program that evaluates the particular fifth-order recurrence, but does so without using arrays?

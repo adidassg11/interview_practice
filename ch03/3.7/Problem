@@ -1,0 +1,3 @@
+3.7
+
+Typical dictionaries allow one to look up the definition of a word, and Problem 2.1 describes a dictionary that allows one to look up the anagrams of a word. Design dictionaries for looking up the proper spelling of a word and for looking up the rhymes of a word. Discuss dictionaries for looking up an integer sequence (such as 1,1,2,3,5,8,...), a chemical structure, or the metrical structure of a song.

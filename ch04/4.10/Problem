@@ -1,0 +1,4 @@
+4.10
+
+Introduce errors into the binary search function and see whether (and how) they are caught by attempting to verify the buggy code.
+
