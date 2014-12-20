@@ -1,0 +1,3 @@
+2.5
+
+Vector rotation functions change the vector ab to ba; how would you transform the fector abc, to cba? (This models the problem of swapping noadjacent blocks of memory)
