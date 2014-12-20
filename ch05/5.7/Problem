@@ -1,0 +1,13 @@
+5.7 
+
+The timing scaffolding in section 5.5 has a potential timing bug: by searching for each element in order, we get particularly beneficial caching behavior. If we know that the searches in the potential application will exhibit similar locality, this is an accurate framework (but binary search is probably not the right tool for that job). If we expect the searches to probe the array randomly, though, then we should probably initialize and shuffle a permutation vector
+
+for i = [0, n)
+    p[i] = i
+scramble(p,n)
+
+and then perform the searches in a random order
+
+assert(binarysearch1(p[i]) == p[i])
+
+Measure the two versions to see if there is any difference in observed run times.
