@@ -1,3 +1,6 @@
+#ifndef _CH4_BTNODE
+#define _CH4_BTNODE
+
 #include <climits>
 
 #define INVALID_DATA INT_MAX
@@ -45,3 +48,5 @@ or
 
 
 */
+
+#endif // _CH4_BTNODE
