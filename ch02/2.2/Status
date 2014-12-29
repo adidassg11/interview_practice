@@ -1,1 +1,5 @@
 Complete
+
+Stack solution with O(n+k) time and O(n) memory
+
+better 2 counter solution with O(n) time and O(1) memory
