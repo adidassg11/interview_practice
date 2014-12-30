@@ -6,4 +6,7 @@ struct Node {
     Node* next;
 };
 
+void printNode(Node* node);
 void printSLL(Node* node);
+void printSimpleSLL(Node* node);
+void deleteSLL(Node* head);
