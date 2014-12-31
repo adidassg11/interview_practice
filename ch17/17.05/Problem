@@ -1,3 +1,5 @@
+Problem 17.5
+
 The Game of MasterMind is played as follow:
 The cpu has 4 slots, and each slot will contain a ball that is red (R), yellow(Y), green(G), or blue(B). For example, the cpu might have RGGB (slot #1 is red, slots 2 and 3 are green, etc)
 
