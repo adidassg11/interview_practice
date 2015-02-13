@@ -1,0 +1,17 @@
+Solution
+= = = = =
+
+This is a one-dimenional dynamic programming problem in which we add up values of homes as we walk through the list/street. According to the rules, we can't rob two consecutive homes. Because of this, if we're at house 'i', we could not have robbed house i-1, but we could have robbed house i-2, or i-3. House i-2 will have a cumulative total up to that point, and house i-3 will have a cumulative total associated with it, too.
+
+Our maximum total for house i will be
+Total1: house i + total sum through house [i-2], but the 'total sum through' will actually just be stored in the house[i-2], since we're modifying the array as we go
+
+Therefore our possibilities are:
+Total1: house[i] + house[i-2] and
+Total2: house[i] + house[i-3]
+
+Non considerations are here:
+Total0: house[i] + house[i-1], against the rules
+Total3: house[i] + house[i-x], where x>3, these are strictly inferior to 'Total1' and 'Total2' beacuse you are skipping more houses than necessary
+
+...it's hard to describe via text, but hopefully the code makes it clearer
