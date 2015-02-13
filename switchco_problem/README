@@ -1,0 +1,5 @@
+compile and run with:
+g++ main.cpp ; ./a.out
+
+for more output, compile and run with:
+g++ -DDEBUG main.cpp ; ./a.out
