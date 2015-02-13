@@ -1,0 +1,5 @@
+http://www.careercup.com/question?id=5765784060035072
+
+    Write a function to find the nth "ugly number". ugly numbers are numbers that can only be fully divided by 1, 2, 3, 5 and itself.
+reworded:
+    Write a function to find the nth "ugly number". ugly numbers are numbers whose prime factorization set is 2, 3, and 5
