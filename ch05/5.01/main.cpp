@@ -35,7 +35,7 @@ bool isOddParity(long long num) {
 }
 
 int main(void) {
-    long long n1 = 0xD;
+    long long n1 = 0xD; //0b1101
     printf("%lld is %s parity\n", n1, isOddParity(n1)?"odd":"even");
     n1 = 0xC;
     printf("%lld is %s parity\n", n1, isOddParity(n1)?"odd":"even");
