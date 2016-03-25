@@ -1,0 +1,4 @@
+6.7 FIND THE FIRST MISSING POSITIVE ENTRY
+Problem 6.7: Let A be an array of length 11. Design an algorithm to find the smallest
+positive number which is not present in A. You do not need to preserve the contents
+of A, pg. 193

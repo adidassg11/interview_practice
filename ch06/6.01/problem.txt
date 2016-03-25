@@ -1,0 +1,3 @@
+Problem 6.01
+
+Write a function that takes an array A of lengthn and an index i into A, and rearranges the elements such that all elements less than A[i] appear first, followed by eleements equal to A[i], followed by elements greater than A[i]

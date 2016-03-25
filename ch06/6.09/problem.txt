@@ -1,0 +1,4 @@
+6.9 GENERALIZATIONS OF MAX DIFFERENCE 
+One interpretation of the max difference problem, introduced on Page 2, is that it formalizes the max profit that can be made by buying and then selling a single share over a given day range. It naturally generalizes to the following 3 problems. For each problem, a bu-sell transaction must be completed before the next can be initiated. 
+
+Problem 6.9: For each of the following, A is an integer array of length n. (1.) What is the maximum profit that can be made by buying and selling a share two times over a given day range? (2.) What is the maximum profit that can be made by buying and selling a share k times over a given day range?  Here k is a fixed input pa share (3.) What is the maximum profit that can be made by buying and selling share any number of times over a given day range?
