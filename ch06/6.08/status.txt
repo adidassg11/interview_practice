@@ -1,0 +1,3 @@
+INCOMPLETE
+
+I must be misunderstanding something - shouldn't it be just the global max Z value as the capacity?? assuming 1 unit of capacity = 1 unit of height, what do x and y coords have to do with anything?? Unless there are multiple paths to a destination but then what is the dest?? This problem seems to be missing something
