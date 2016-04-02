@@ -3,7 +3,7 @@
 import coord
 import copy
 
-#STATUS - so close! problem with rows and cols
+#STATUS - incomplete - so close! problem with rows and cols
             
 #TODO: finish this
 class Matrix(object):
