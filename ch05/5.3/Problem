@@ -1,0 +1,3 @@
+5.3
+
+Introduce errors into the binary search function. How are your errors caught by the tests? How does the scaffolding help you chase down the bugs? (this exercise is best carried out as a two-player game, in which the attacker introduces bugs that the defender must then track.) 

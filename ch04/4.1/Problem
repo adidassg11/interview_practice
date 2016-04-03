@@ -1,0 +1,3 @@
+4.1
+
+As laborious as our proo of binary search was, it is still unfinished by some stards. How would you prove that the program is free of run-time errors(such as division by zero, word overflow, vars out of declared range, or array indices out of bounds)? If you have a background in discrete math, can you formalize the proof in a logical system?

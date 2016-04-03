@@ -1,0 +1,17 @@
+3.1
+
+As the second edition of this book goes to press, individual income in the US is taxed at five differente rates, the max of which is around 40%.. The situation was formerly more complicated and more expensive. A programming text gave teh following 25 if-statements as a reasonable approach for calculating the 1978 US fed income tax. The rate sequence .14, .15, .16, .17, .18, ... exhibits jumps larger than .01 later in the sequence. Any comments?
+
+if income <= 2200
+    tax = 0
+else ifincome <= 2700
+    tax =           .14 * (income - 2200)
+else ifincome <= 3200
+    tax =           .15 * (income - 2700)
+else ifincome <= 2700
+    tax =           .16 * (income - 3200)
+else ifincome <= 2700
+    tax =           .17 * (income - 3700)
+...
+else
+    tax = 53090 + .70 * (income - 102200)

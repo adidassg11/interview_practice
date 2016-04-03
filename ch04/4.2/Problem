@@ -1,0 +1,3 @@
+4.2
+
+If the original binary search was too easy for you, try the variant that returns in p the position of the first occurence of t in the array x (if there are multiple occurences of t, the original algo returns an arbitrary one). Your code should make the logorithmic number of comparisons of array elements; it is possible to do the job in log2n such comparisons.

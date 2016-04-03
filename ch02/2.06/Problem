@@ -1,0 +1,11 @@
+2.6
+
+In the late 1970's, Bell Labs deployed a 'user-operated directory assistance' program that allowed employees to look up a number in a company telephone directory using a standard push-button telephone. 
+
+2=abc
+3=def
+...
+9=wxy
+0=operator
+
+To find the number of the designer of the system, Mike Lesk, one pressed 'LESK*M*' and the system spoke his number. Such services are no ubiquitous. One problem that arises in such systems is that different names may have the same push-button encoding; when this appens in Lesk's system, it asks the user for more information. Given a large file of names, such as a standard metro telephone directory, how would you locate these 'false matches'? (when lesk did this experiment on such telephone directories, he found that the incidence of false matches was just 0.2 %) How would you implement the fucntion that is given a push-button encoding of a name and returns the set of possible matching names?

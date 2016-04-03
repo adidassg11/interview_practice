@@ -1,0 +1,3 @@
+5.5
+
+A common bug applies binary search to an unsorted array. Completely checking whether the array is sorted before each search has the exorbitant cost of n-1 extra comparisons. How can you add partial checking to the function at a significantly less cost?

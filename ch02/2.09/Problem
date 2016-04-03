@@ -1,0 +1,3 @@
+2.9
+
+Sequential search and binary search represent a tradeoff between search time and preprocessing time. How many binary searches need be performed in an n-element table to buy back the preprocessing time required to sort the table?

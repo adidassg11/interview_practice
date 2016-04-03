@@ -1,0 +1,3 @@
+4.4
+
+Add fictitious "timing variables" to your binary search program to count the number of comparisons it makes, and use program verification techniques to prove that its run time is indeed logarithmic

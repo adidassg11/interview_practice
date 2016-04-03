@@ -1,0 +1,7 @@
+4.11
+
+Write and prove the correctness of a recursive binary search function in c or c++ with this declaration:
+
+int binarysearch(DataType x[], int n)
+
+Use this function alone; do not call any other recursive functions.

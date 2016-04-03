@@ -1,0 +1,4 @@
+2.7
+
+In the early 60's, Vic Vyssotsky worked with a programmer who had to transpose a 4000x4000 matrix stored on magentic tape (each record had the same format in several dozen bytes). The original program his colleague suggested would have taken fifty hours to run; how did V reduce the run time to half an hour?
+

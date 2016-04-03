@@ -1,0 +1,11 @@
+3.8
+
+Seven-segment devices provide an inexpensive display of the ten decimal digits (like an alarm clock). The segments are numbered liek this:
+
+     _2__
+   3|    |4
+    |_1__|
+   5|    |6
+    |_0__|
+
+Write a program that displays a 16-bit psoitive integer in five seven-segment digits. The output is an array of five bytes; bit i of byte j is one if and only if the ith segment of digit j should be on

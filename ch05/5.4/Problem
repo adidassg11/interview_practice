@@ -1,0 +1,3 @@
+5.4
+
+Repeat Problem 5.3, but this time leave the binary search code correct and introduce errors into the functions that call it (such as forgetting to sort the array)
