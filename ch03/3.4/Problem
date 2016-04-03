@@ -1,0 +1,9 @@
+/*
+3.4
+in the classic problem of the Towers of Hanoi, you have 3 towers and N disks of different sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order of size from top to bottom (i.e. each disk sits on top of an larger one) you have teh following constraints:
+1 0 only one disk can be moved at a time
+2 - a disk is slid off the top of one and onto the next tower
+3 - a disk can only be placed on top of a larger disk
+
+write a program to move the disks from teh first tower to the last using stacks
+*/

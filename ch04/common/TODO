@@ -1,0 +1,3 @@
+printTreePretty() still needs work
+
+some memory leaks going on ... why am i losing 16b even with nothing in main() ?

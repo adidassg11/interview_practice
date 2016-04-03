@@ -1,0 +1,7 @@
+/*
+given a circular linked list, implement an algo which returns the node at the beginning of the loop
+
+EXAMPLE
+input: a>b>c>d>e>c
+output: c
+*/

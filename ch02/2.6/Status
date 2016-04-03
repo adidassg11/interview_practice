@@ -1,0 +1,3 @@
+INCOMPLETE
+
+I'm using the method with two counters traversing the list until the loop entry is discovered O(??) time and O(1) memory, still buggy though
