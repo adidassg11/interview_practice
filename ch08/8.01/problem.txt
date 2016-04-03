@@ -1,0 +1,5 @@
+Problem 8.01
+
+<See image in book>
+
+Write a function that takes L and F, and returns the merge of L and F. Your code should reuse the notes from the lists provided as input. Your function should use O(1) additional storage, as illustrated in Figure 8.3. The only field you can change in a node is 'next'

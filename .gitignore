@@ -24,3 +24,11 @@
 *.exe
 *.out
 *.app
+
+# Swap files
+*.swp
+*.swo
+*.swn
+
+# Weird mac files
+*.dSYM
