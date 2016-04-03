@@ -1,0 +1,4 @@
+unfinished, some kind of bug
+
+
+could do this easily with n^2 time, could do it in nlogn time... how about bit manipulation tricks to get O(n) time (as opposed to massive hashtable/bitmap)???

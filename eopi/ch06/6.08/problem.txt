@@ -1,0 +1,5 @@
+Problem 6.8
+
+A robot needs to travel along a path that includes several ascents and descents. When it goes up, it uses its batter to power the motor and when it descends, it recovers the energy which is stored in the battery. The batter has a limited capacity and once it reaches this capacity, the energy generated in descending is lost.
+
+Design an algorithm that takes a sequence of n three-dimensional coordinates to be traversed, and returns the minimum battery capacity needed to complete the journey. The robot begins with the batter fully charged.

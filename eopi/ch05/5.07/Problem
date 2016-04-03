@@ -1,0 +1,3 @@
+5.07 Compute x^y
+
+Write a function that takes a double x and an integer y and returns x^y. Assume addition, mult, and div take constant time. You cannot use any functions, except for those you write yourself. Youc an ignore overflow and underflow

@@ -1,0 +1,5 @@
+5.02 Swap bits
+
+There are a number of ways in which bit manipulations can be accelerated. For example, the expression x&(x-1) equals x with the lowest set bit cleared, and x&~(x-1) extracts the lowest set bit of x (all other bits are cleared)
+
+A 64bit integer can be viewed as an array of 64 bits with the bit at index 0 corresponding to the least significant bit (LSB), and the bit at index 63 corr. to the most significant bit (MSB). Implemment code that takes as input a 64bit int and swaps the bits in that int at indices i and j. 

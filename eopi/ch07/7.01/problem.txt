@@ -1,0 +1,5 @@
+Problem 7.01
+
+A string is a sequence of chars, a string may encode an integer ("123"). In this problem, you are the implement methods that take a string representing an int and return the corresponding int, and vice versa. Your code should handle negative integers. You cannot use library functions like stoi in C++.
+
+Implement string/integer inter-conversion functions.
