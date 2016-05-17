@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # start time - 2:26
 # end time - 
-# status - complete with some bugs
+# status - complete with some bugs TODO: book has solution of O(n) dict buildup + O(p+k) lookup
 # solution - O(n^2) cpu and O(n^2/2) mem to build dict then O(1) lookup
 
 #NOTE: this assumes no punctuation, text has already been cleansed
