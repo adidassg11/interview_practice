@@ -1,0 +1,3 @@
+16.10 - Living people
+
+Given a list f people with their birth and death years, implement a method to compute the year with the most number of people alive, you may assume that all people were born between 1900 and 2000 (inclusive) if a person was alive during any portion of that year, they should be included in that year's count. For example, Person (b = 1908, d = 1909) is included in 2 years
