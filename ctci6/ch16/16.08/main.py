@@ -6,13 +6,11 @@
 # solution - O(n), O(1) mem
 
 def print_num(num):
-    ones_dict = { 0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four',
-                  5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
-    teens_dict = { 10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen',
+    under_twenty_dict = { 0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four',
+                  5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine',
+                  10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen',
                    14: 'fourteen', 15: 'fifteen', 16: 'sixteen',
                    17: 'seventeen', 18: 'eighteen', 19: 'nineteen' }
-    under_twenty_dict = ones_dict.copy()
-    under_twenty_dict.update(teens_dict) #TODO: just combine the 2 in the future
     tens_dict = { 2: 'twenty', 3: 'thirty', 4: 'fourty', 5: 'fifty',
                   6: 'sixty', 7: 'seventy', 8: 'eighty', 9: 'ninety' }
     powers_of_thousand = { 0: '', 1: 'thousand', 2: 'million', 3: 'billion' } # this could keep going...
@@ -35,7 +33,7 @@ def print_num(num):
             tens_place = final_two / 10
             num_string += tens_dict[tens_place]
             if ones_place != 0:
-                num_string += ' %s' % ones_dict[ones_place]
+                num_string += ' %s' % under_twenty_dict[ones_place]
 
         # hundreds...
         num /= 100
