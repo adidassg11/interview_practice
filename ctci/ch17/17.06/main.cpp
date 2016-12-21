@@ -1,3 +1,10 @@
+/* Solution:
+just sort copy the array, sort the copy, and compare to the original. O(N) mem, O(nlogn + n) runtime
+
+slightly better:
+Build bst from array as you iterate over it, keep inserting new number and if it is less than max, store its index. This is less than nlogn because each insertion is only on part of the dataset (except for the last insertion into the tree)
+*/
+
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
