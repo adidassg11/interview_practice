@@ -1,10 +1,24 @@
 #!/usr/bin/python
 
-# status - WIP
+# status - incomplete, WIP
 # start - 1155
-# end - 1120
+# end - 1220
 # solution O(k^2/2), how do i do this in linear time???
 
+class BadArgumentsException(Exception):
+    pass
+
+def generate_lengths2(k):
+    if k == 0:
+        raise BadArgumentsException
+
+    lengths = set()
+    for i in range(k-1):
+        print i
+
+
+
+# this was my original but i misread the question
 def generate_lengths(k):
     if k == 0:
         return 0
@@ -34,9 +48,7 @@ def generate_lengths(k):
 #print generate_lengths(1)
 #print generate_lengths(2)
 print generate_lengths(3)
-'''
-print generate_lengths(4)
-print generate_lengths(5)
-print generate_lengths(6)
-'''
+# print generate_lengths(4)
+# print generate_lengths(5)
+# print generate_lengths(6)
 
