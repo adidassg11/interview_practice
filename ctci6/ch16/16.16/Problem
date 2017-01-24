@@ -1,0 +1,4 @@
+Sub sort: given an array of integers, write a method to find indicies M and N such that if you sorted elements M thru N the entire array would be sorted. Minimize N-M (i.e. find the smallest such sequence)
+
+Example: input: 1 2 4 7 10 11 7 12 6 7 16 18 19
+output: (3, 9)
