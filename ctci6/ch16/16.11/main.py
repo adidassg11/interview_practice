@@ -5,17 +5,25 @@
 # end - 1220
 # solution O(k^2/2), how do i do this in linear time???
 
+#trying again:
+# start - 1110
+# end - 1116
+# solution: O(k) runtime
+
 class BadArgumentsException(Exception):
     pass
 
-def generate_lengths2(k):
+# Insight - order/combo doesn't matter. This is actually really trivial
+def generate_lengths2(k, longer_len='L', shorter_len='S'):
     if k == 0:
         raise BadArgumentsException
 
-    lengths = set()
-    for i in range(k-1):
-        print i
+    lengths = set()  # avoids multiple lengths of same size
+    for i in range(k+1):
+        new_len = shorter_len*i + longer_len*(k-i)
+        lengths.add(new_len)
 
+    return lengths
 
 
 # this was my original but i misread the question
@@ -45,10 +53,11 @@ def generate_lengths(k):
 
 
 #there is a clear pattern here, you could just hard code some math but that's not as flexible when you want to add new length possibilities...
-#print generate_lengths(1)
-#print generate_lengths(2)
-print generate_lengths(3)
-# print generate_lengths(4)
+print generate_lengths2(1)
+print generate_lengths2(2)
+print generate_lengths2(4)
+print generate_lengths2(4, 5, 2)
+print generate_lengths2(4, 1, 1)
 # print generate_lengths(5)
 # print generate_lengths(6)
 
