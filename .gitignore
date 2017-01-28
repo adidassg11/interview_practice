@@ -32,7 +32,9 @@
 # Weird mac files
 *.DS_Store
 *.dSYM
+
 # Swap files
-*.swp #technically should be '.sw? or actually .s??', but that's a bad idea
-*.swo
-*.swn
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+tags
