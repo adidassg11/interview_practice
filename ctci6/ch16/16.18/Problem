@@ -1,0 +1,1 @@
+You are given two strings, 'pattern' and 'value'. The pattern string consists of just the latters a and b, describing a pattern within a string. For ex the string 'catcatgocatgo' matches the pattern 'aabab' where cat is a and go is b. Write a method to determine if 'value' matches 'pattern'
