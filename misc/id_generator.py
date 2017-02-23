@@ -77,30 +77,29 @@ class IDAllocatorCompact(IDAllocator):
     def __init__(self, size):
         self._size = size  # number of IDs
 
-        next_power2 = 2 ** ceil(log2(self._size))  # size rounded up to nearest power 2
-        self._next_power2 = next_power2
-        self._total_bank_size = next_power2 * 2 - 1
-        self._unavail_bank_size = next_power2 - size
-        self._avail_bank_size = self._total_bank_size - self._unavail_bank_size
+        self._id_bank_width = 2 ** ceil(log2(self._size))  # size rounded up to nearest power 2
+        self._total_tree_size = self._id_bank_width * 2 - 1
+        self._unavail_bank_size = self._id_bank_width - size
+        self._tree_nodes_used = self._total_tree_size - self._unavail_bank_size
 
         # used to store bin tree structure for bank access
-        self._id_bank = self._avail_bank_size*[1]  # real bank
+        self._id_bank = self._tree_nodes_used*[1]  # real bank
         self._id_bank.extend(self._unavail_bank_size*[0])
 
-        #self._id_bank = list(map(lambda x: x, range(self._total_bank_size)))  # test bank for print
+        #self._id_bank = list(map(lambda x: x, range(self._total_tree_size)))  # test bank for print
         '''
         # Debug
         print('bank size: %s' % self._size)
-        print('next_power2: %s' % next_power2)
-        print('bank avail bank size: %s' % self._avail_bank_size)
+        print('id_bank_width: %s' % self._id_bank_width)
+        print('bank avail bank size: %s' % self._tree_nodes_used)
         print('bank unavail bank size: %s' % self._unavail_bank_size)
-        print('bank total bank size: %s' % self._total_bank_size)
+        print('bank total bank size: %s' % self._total_tree_size)
         print('tree array: %s' % self._id_bank)
         '''
 
-        # Need to find 0's and propogate them up...
+        # Need to find 0's from unused tree nodes and propogate them up...
         # Optimization to only try even indicies
-        zeros_range = range(self._avail_bank_size, self._total_bank_size)
+        zeros_range = range(self._tree_nodes_used, self._total_tree_size)
         for i in filter(lambda x: x % 2 == 0, zeros_range):
             self._propagate_up(i)
 
@@ -111,7 +110,7 @@ class IDAllocatorCompact(IDAllocator):
         # Set current value based on child nodes
         left_child_idx = ListUtils.get_lc_idx(idx)
         right_child_idx = ListUtils.get_rc_idx(idx)
-        if right_child_idx >= self._total_bank_size:
+        if right_child_idx >= self._total_tree_size:
             return self._propagate_up(ListUtils.get_parent_idx(idx))
 
         new_value = self._id_bank[left_child_idx] or self._id_bank[right_child_idx]
@@ -140,8 +139,8 @@ class IDAllocatorCompact(IDAllocator):
 
         bank_width = 1
         bank_start_idx = 0
-        num_pad_spaces = self._next_power2 // 2
-        num_levels = ceil(log2(self._total_bank_size))
+        num_pad_spaces = self._id_bank_width // 2
+        num_levels = ceil(log2(self._total_tree_size))
 
         for i in range(num_levels):
             pre_spaces = ' ' * max(0, 2**(num_levels-i-1))  # Magic math, spaces before #s
@@ -163,9 +162,9 @@ class IDAllocatorCompact(IDAllocator):
             return (False, None)
 
         # If we're in ID bank section of the BST, return ID
-        print("total bank: %s" % self._total_bank_size)
+        print("total bank: %s" % self._total_tree_size)
         if idx > self._size - 1:
-            return (True, self._total_bank_size // 2 - idx - 1) ### ??????? TODO
+            return (True, self._total_tree_size // 2 - idx - 1) ### ??????? TODO
 
         # Else recurse thru children
         found_id_left, id_ = self._next_avail_rec(ListUtils.get_lc_idx(idx))
