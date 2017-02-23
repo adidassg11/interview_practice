@@ -1,23 +1,30 @@
 #!/usr/bin/python3
 from abc import ABCMeta, abstractmethod
-from math import ceil, floor, log2
+from math import ceil, log2
 
 
 class ListUtils(object):
+    """
+        Generic functions to operate on list-based BST's
+    """
     def get_lc_idx(i):
-        """ Get left child index, assumes 0-index array"""
+        """ Get left child index """
         return 2*i + 1
 
     def get_rc_idx(i):
+        """ Get right child index """
         return 2*i + 2
 
     def get_parent_idx(i):
+        """ Get parent node index """
         if i == 0:
             raise Exception('Node 0 has no parent')
 
-        if i % 2 == 0:  # Get parent of right child
+        if i % 2 == 0:
+            # Get parent of right child
             return i//2 - 1
-        else:  # Left child
+        else:
+            # parent of left
             return i//2
 
 
@@ -68,13 +75,13 @@ class IDAllocatorCompact(IDAllocator):
     """
 
     def __init__(self, size):
-        self._size = size
+        self._size = size  # number of IDs
 
         next_power2 = 2 ** ceil(log2(self._size))  # size rounded up to nearest power 2
         self._next_power2 = next_power2
+        self._total_bank_size = next_power2 * 2 - 1
         self._unavail_bank_size = next_power2 - size
-        self._avail_bank_size = next_power2*2 - self._unavail_bank_size - 1
-        self._total_bank_size = self._unavail_bank_size + self._avail_bank_size
+        self._avail_bank_size = self._total_bank_size - self._unavail_bank_size
 
         # used to store bin tree structure for bank access
         self._id_bank = self._avail_bank_size*[1]  # real bank
@@ -147,8 +154,32 @@ class IDAllocatorCompact(IDAllocator):
 
         return ret_str
 
+    def ids_are_available(self):
+        return self._id_bank[0] == 1
+
+    def _next_avail_rec(self, idx=0):
+        print('_next_avail_rec(%s)' % idx)
+        if self._id_bank[idx] == 0:
+            return (False, None)
+
+        # If we're in ID bank section of the BST, return ID
+        print("total bank: %s" % self._total_bank_size)
+        if idx > self._size - 1:
+            return (True, self._total_bank_size // 2 - idx - 1) ### ??????? TODO
+
+        # Else recurse thru children
+        found_id_left, id_ = self._next_avail_rec(ListUtils.get_lc_idx(idx))
+        if found_id_left:
+            return found_id_left, id_
+
+        return self._next_avail_rec(ListUtils.get_rc_idx(idx))
+
     def get_next_avail(self):
-        pass
+        if not self.ids_are_available():
+            return None
+
+        found_id, id_ = self._next_avail_rec()
+        return id_ if found_id else None
 
     def release_id(self, id_):
         pass
@@ -167,5 +198,6 @@ id_alloc.release_id(10)
 print(id_alloc)
 '''
 
-id_alloc = IDAllocatorCompact(9)
+id_alloc = IDAllocatorCompact(17)
 print(id_alloc)
+print(id_alloc.get_next_avail())
