@@ -156,28 +156,30 @@ class IDAllocatorCompact(IDAllocator):
     def ids_are_available(self):
         return self._id_bank[0] == 1
 
-    def _next_avail_rec(self, idx=0):
-        print('_next_avail_rec(%s)' % idx)
+    def _next_avail_rec(self, idx=0, mark_as_used=False):
         if self._id_bank[idx] == 0:
             return (False, None)
 
         # If we're in ID bank section of the BST, return ID
-        print("total bank: %s" % self._total_tree_size)
-        if idx > self._size - 1:
-            return (True, self._total_tree_size // 2 - idx - 1) ### ??????? TODO
+        if idx >= self._id_bank_width - 1:
+            # TODO: could pull the propagate out into caller so rec. call stack isn't doubled
+            if mark_as_used:
+                self._id_bank[idx] = 0
+                self._propagate_up(idx)
+            return (True, idx - (self._id_bank_width - 1))
 
         # Else recurse thru children
-        found_id_left, id_ = self._next_avail_rec(ListUtils.get_lc_idx(idx))
+        found_id_left, id_ = self._next_avail_rec(ListUtils.get_lc_idx(idx), mark_as_used)
         if found_id_left:
             return found_id_left, id_
 
-        return self._next_avail_rec(ListUtils.get_rc_idx(idx))
+        return self._next_avail_rec(ListUtils.get_rc_idx(idx), mark_as_used)
 
     def get_next_avail(self):
         if not self.ids_are_available():
             return None
 
-        found_id, id_ = self._next_avail_rec()
+        found_id, id_ = self._next_avail_rec(mark_as_used=True)
         return id_ if found_id else None
 
     def release_id(self, id_):
@@ -197,6 +199,7 @@ id_alloc.release_id(10)
 print(id_alloc)
 '''
 
-id_alloc = IDAllocatorCompact(17)
-print(id_alloc)
-print(id_alloc.get_next_avail())
+id_alloc = IDAllocatorCompact(9)
+for i in range(10):
+    print(id_alloc)
+    print('id: %s' % id_alloc.get_next_avail())
