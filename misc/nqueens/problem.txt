@@ -1,0 +1,1 @@
+nqueens - find all possible arrangements of a chess board of nxn size with n queens such that no queens can attack each other
